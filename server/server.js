@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -20,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 const dbUrl = process.env.DB_URL;
-mongoose.connect("mongodb://127.0.0.1:27017/mybooks").then(() => console.log("Mongoose Connected!"))
+mongoose.connect(dbUrl).then(() => console.log("Mongoose Connected!"))
 
 // Define a schema and model
 const userSchema = new mongoose.Schema({
