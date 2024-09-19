@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import AddISBNPage from './components/AddISBNPage'
 import Home from './Home'
 import Note from './components/Note'
@@ -18,7 +18,6 @@ function App() {
 }
 
 const NoteWrapper = (props) => {
-    const navigate = useNavigate();
     const location = useLocation();
     const { state } = location;
     const { isbn } = state || {}; 
