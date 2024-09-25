@@ -40,7 +40,7 @@ function CBook({isbn, book_name, author}) {
     const isbn = e.target.id;
     // change its section from 2 to 3 in database
     try {
-      const response = await fetch(`http://localhost:3000/api/bookscmp/${isbn}`, {
+      const response = await fetch(`https://book-backend-odmd.onrender.com/api/bookscmp/${isbn}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
