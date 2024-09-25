@@ -10,7 +10,7 @@ function Books() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/books');
+        const response = await fetch('https://book-backend-odmd.onrender.com/api/books');
         if (response.ok) {
           const data = await response.json();
           setBooksData(data); // Update state with the fetched books
