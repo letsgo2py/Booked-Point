@@ -13,7 +13,7 @@ function ISBN(props) {
 
         // Send POST request to the server
         try {
-            const response = await fetch('http://localhost:3000/api/addBook', {
+            const response = await fetch('https://book-backend-odmd.onrender.com/api/addBook', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
