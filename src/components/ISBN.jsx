@@ -27,7 +27,7 @@ function ISBN(props) {
 
             if (response.ok) {
                 console.log('Book added successfully');
-                navigate('https://bookish-worm-frontend.onrender.com'); // Redirect to home page
+                navigate('/'); // Redirect to home page
             } else {
                 console.error('Failed to add the book');
             }
