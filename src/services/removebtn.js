@@ -1,6 +1,6 @@
 export const removeBook = async (isbn) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/remove/${isbn}`, {
+      const response = await fetch(`https://book-backend-odmd.onrender.com/api/remove/${isbn}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
