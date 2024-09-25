@@ -7,7 +7,7 @@ function CBook({isbn, book_name, author}) {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    const isStored = await axios.post('http://localhost:3000/check', {isbn})
+    const isStored = await axios.post('https://book-backend-odmd.onrender.com/check', {isbn})
     console.log(isStored.data)
     navigate('/mynote', { state: { isbn } });
   }
