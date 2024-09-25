@@ -7,7 +7,7 @@ function CBook({isbn, book_name, author}) {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    const isStored = await axios.post('http://localhost:3000/check', {isbn})
+    const isStored = await axios.post('https://book-backend-odmd.onrender.com/check', {isbn})
     console.log(isStored.data)
     navigate('/mynote', { state: { isbn } });
   }
@@ -16,7 +16,7 @@ function CBook({isbn, book_name, author}) {
     const isbn = e.target.id;
     // change its section from 2 to 1 in database
     try {
-      const response = await fetch(`http://localhost:3000/api/booksback/${isbn}`, {
+      const response = await fetch(`https://book-backend-odmd.onrender.com/api/booksback/${isbn}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
