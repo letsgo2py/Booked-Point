@@ -10,7 +10,7 @@ function Note({isbn}) {
   useEffect(() => {
     async function fetchContent() {
       try {
-        const response = await axios.get('http://localhost:3000/content', {
+        const response = await axios.get('https://book-backend-odmd.onrender.com/content', {
           params: { isbn: isbn }, // Correct way to pass params
         });
         console.log(response.data)
@@ -31,7 +31,7 @@ function Note({isbn}) {
     console.log("Content:", content)
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/submit', { 
+      const response = await axios.post('https://book-backend-odmd.onrender.com/submit', { 
         isbn: isbn,
         content: content, 
       });
