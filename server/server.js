@@ -13,7 +13,9 @@ const port = process.env.PORT || 3000;
 // Or, specify allowed origins
 app.use(cors({
     // origin: 'http://localhost:5173' // Allow only from this origin
-    origin: 'https://bookish-worm-frontend.onrender.com'
+    origin: 'https://bookish-worm-frontend.onrender.com',// Allow only from this origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed methods
+    credentials: true,
 }));
 
 // Middleware   
