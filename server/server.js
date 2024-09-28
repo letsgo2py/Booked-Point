@@ -11,27 +11,11 @@ const port = process.env.PORT || 3000;
 // app.use(cors()); 
 
 // Or, specify allowed origins
-const allowedOrigins = ['https://bookish-worm-frontend.onrender.com'];
-
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://bookish-worm-frontend.onrender.com'); // Replace with your frontend's domain
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allow specific HTTP methods
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allow specific headers
-    next();
-});
-
-// Enable CORS for preflight requests
-app.options('*', cors({
-    origin: 'https://bookish-worm-frontend.onrender.com',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-}));
-
-// Enable CORS for all routes
 app.use(cors({
     origin: 'https://bookish-worm-frontend.onrender.com', // Allow only this origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed methods
     credentials: true,
+    allowedHeaders: ['Content-Type'],
 }));
 
 // Middleware   
