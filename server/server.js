@@ -13,15 +13,17 @@ const port = process.env.PORT || 3000;
 // Or, specify allowed origins
 const allowedOrigins = ['https://bookish-worm-frontend.onrender.com'];
 
-app.use(cors({
-    origin: function (origin, callback) {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+// Enable CORS for preflight requests
+app.options('*', cors({
+    origin: 'https://bookish-worm-frontend.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
+
+// Enable CORS for all routes
+app.use(cors({
+    origin: 'https://bookish-worm-frontend.onrender.com', // Allow only this origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed methods
     credentials: true,
 }));
 
