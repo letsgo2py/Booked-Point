@@ -8,15 +8,15 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Enable CORS for all origins (for development)
-// app.use(cors()); 
+app.use(cors()); 
 
 // Or, specify allowed origins
-app.use(cors({
-    origin: 'https://bookish-worm-frontend.onrender.com', // Allow only this origin
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed methods
-    credentials: true,
-    allowedHeaders: ['Content-Type'],
-}));
+// app.use(cors({
+//     origin: 'https://bookish-worm-frontend.onrender.com', // Allow only this origin
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed methods
+//     credentials: true,
+//     allowedHeaders: ['Content-Type'],
+// }));
 
 // Middleware   
 app.use(bodyParser.json());
