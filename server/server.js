@@ -86,6 +86,7 @@ app.get('/api/books', async (req, res) => {
     try {
         const books = await Book.find(); // Fetch all books from the database
         res.status(200).json(books); // Return the books in JSON format
+        console.log("Books");
     } catch (error) {
         console.error(error);
         res.status(500).send('Error fetching books');
