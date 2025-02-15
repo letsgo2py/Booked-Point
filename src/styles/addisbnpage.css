@@ -1,0 +1,19 @@
+.get-books {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    
+}
+
+.search-text {
+    color: white;
+}
+
+.searched-books{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

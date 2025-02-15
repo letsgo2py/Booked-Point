@@ -2,7 +2,7 @@ import React from 'react';
 import { removeBook } from '../../services/removebtn.js';
 
 function Book({ isbn, book_name, author}) {
-
+  const [imgSrc, setImgSrc] = useState(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
   const handleClick = async (e) => {
     const isbn = e.target.id;
     // change its section from 1 to 2 in database
@@ -38,11 +38,18 @@ function Book({ isbn, book_name, author}) {
     }
   };
 
+  const handleImageError = () => {
+    setImgSrc('book.jpg');
+  };
+
   return (
-    <div>
+    <div className='card'>
         <div className='book-div'>
-          <div className='cover-img'>
+          {/* <div className='cover-img'>
             <img className="book-img" src={"https://covers.openlibrary.org/b/isbn/" + isbn + "-M.jpg"} alt={book_name}></img>
+          </div> */}
+          <div className='cover-img'>
+            <img className="book-img" src={imgSrc} alt={book_name} onError={handleImageError}></img>
           </div>
           <div className='book-info'>
             <h3>{book_name}</h3>

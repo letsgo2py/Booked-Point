@@ -96,7 +96,6 @@ app.get('/api/books', async (req, res) => {
 app.patch('/api/books/:isbn', async (req, res) => {
     const { isbn } = req.params;
     const { section } = req.body;
-    console.log('Updating section:', section);
     try {
         const book = await Book.findOneAndUpdate(
           { isbn },
@@ -136,7 +135,6 @@ app.patch('/api/booksback/:isbn', async (req, res) => {
 app.patch('/api/bookscmp/:isbn', async (req, res) => {
     const { isbn } = req.params;
     const { section } = req.body;
-    console.log('Updating section:', section);
     try {
         const book = await Book.findOneAndUpdate(
           { isbn },
@@ -197,7 +195,7 @@ app.post('/api/addBook', async (req, res) => {
             section: 1,
         });
         await newBook.save();
-        res.status(200).send('Book added successfully');
+        res.status(200).send({message: 'Book added successfully'});
     } catch (error) {
         console.error(error);
         res.status(500).send('Error saving the book');

@@ -1,0 +1,87 @@
+.book-form{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 18rem;
+    width: 20rem;
+    gap: 2rem;
+    border: 5px solid;  /* Border width */
+    border-image: linear-gradient(to right, #4006e0, #009959) 1;  /*1 is to fill the border area with this color */
+    padding: 6px;
+}
+
+/* Submit button */
+.book-form > input{
+    color:white;
+    background-color: #4379F2;
+    background: linear-gradient(to right, #4006e0, #009959);
+    height: 2.5rem;
+    width: 5rem;
+    font-size: large;
+    margin-top: 0.8rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.playwrite-de-grund-book-title {
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.in-form > label{
+    font-size: 1.5rem;
+}
+
+.in-form > input{
+    width: 15rem;
+    height: 2rem;
+    font-size: large;
+    font-weight: 500;
+}
+
+.book-adding-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+}
+
+
+/* 615 px width is the breakpoint */
+@media only screen and (max-width: 615px) {
+    .isbn-btn{
+        height: 40px;
+        width: 60px;
+        border-radius: 18px;
+    }
+    
+    .isbn-data{
+        height: 80px;
+        width: 80%;
+        font-size: 10px;
+    }
+}
+
+/* 390 px width is the breakpoint */
+@media only screen and (max-width: 390px){
+    .isbn-data{
+        height: 100px;
+        width: 90%;
+        font-size: 9px;
+    }
+    .book-form{
+        height: 15rem;
+        width: 15rem;
+    }
+    .in-form > label{
+        font-size: 1rem;
+    }
+    .in-form > input{
+        width: 12rem;
+    }
+}
